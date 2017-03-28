@@ -80,7 +80,7 @@ class App extends Component {
 
   render() {
     if (!this.state.logs.length) {
-      this.addLog('Emulator loaded with success.');
+      this.addLog('Emulator loaded successfully.');
     }
     return (
       <div className="App">
