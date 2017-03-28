@@ -24,6 +24,11 @@ body {
 
 .mt-1 {
   text-align: center;
+  color: #0275d8;
+}
+
+.floatright {
+  float: right;
 }
 
 /* Custom page CSS

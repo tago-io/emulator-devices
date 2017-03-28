@@ -93,7 +93,7 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <div className="mt-1">
-            <h1>Tago Emulator</h1>
+            <h2>Tago Device Emulator</h2>
           </div>
           <form>
             <div className="form-group">
@@ -128,7 +128,12 @@ class App extends Component {
 
         <footer className="footer">
           <div className="container">
-            <span className="text-muted">Tago @ Open Source</span>
+            <a className="text-muted" href="https://tago.io" target="_blank">Tago</a>
+            <span className="text-muted"> @ </span>
+            <a className="text-muted" href="https://github.com/tago-io/emulator" target="_blank">Open Source</a>
+            <span className="text-muted"> @ </span>
+            <a className="text-muted" href="http://community.tago.io" target="_blank">Community</a>
+            <a className="text-muted floatright" href="https://github.com/tago-io/emulator/blob/master/LICENSE.md" target="_blank">Apache License 2.0</a>
           </div>
         </footer>
       </div>
