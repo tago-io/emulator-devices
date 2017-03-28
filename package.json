@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "http://emulator.tago.io",
+  "license": "Apache-2.0",
   "dependencies": {
     "moment": "^2.18.1",
     "ms": "^1.0.0",

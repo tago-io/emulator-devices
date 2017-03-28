@@ -123,7 +123,7 @@ class App extends Component {
 
         <footer className="footer">
           <div className="container">
-            <span className="text-muted">Tago @ MIT License</span>
+            <span className="text-muted">Tago @ Open Source</span>
           </div>
         </footer>
       </div>
