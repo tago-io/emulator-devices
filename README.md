@@ -1,6 +1,8 @@
-## Tago Emulator
+## Tago Device Emulator
 
 run:
-`npm install -g yarn`
-`yarn install`
-`yarn start`
+```bash
+npm install -g yarn
+yarn install
+yarn start
+```
