@@ -105,6 +105,7 @@ class App extends Component {
               <select className="form-control" value={this.state.deviceType} onChange={this.handleDeviceType}>
                 <option disabled defaultValue value="null">Select a Device Type</option>
                 <option value="car">Car</option>
+                <option value="freezer">Freezer</option>
               </select>
             </div>
             <div className="form-group">

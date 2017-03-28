@@ -28,7 +28,7 @@ function car() {
         unit: '%',
         serie: time
     }, {
-        variable: 'lacation_car',
+        variable: 'location_car',
         value: 'car',
         location: { lat: parseFloat(lat), lng: parseFloat(lng) },
         serie: time
