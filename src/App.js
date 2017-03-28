@@ -4,7 +4,7 @@ import moment from 'moment';
 import ms from 'ms';
 import Device from 'tago/device';
 import emulators from './emulators';
-const minInterval = 10000;
+const minInterval = 5000;
 
 class App extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class App extends Component {
     };
 
     this.handleToken = this.handleToken.bind(this);
-    this.handleTimeInterval = this.handleDeviceType.bind(this);
+    this.handleTimeInterval = this.handleTimeInterval.bind(this);
     this.handleDeviceType = this.handleDeviceType.bind(this);
     this.addLog = this.addLog.bind(this);
   }
@@ -60,7 +60,7 @@ class App extends Component {
     }
     const { timeInterval } = this.state;
     const msInterval = ms(`${timeInterval} seconds`);
-    const interval = msInterval <= minInterval ? minInterval : msInterval;
+    const interval = !msInterval || msInterval <= minInterval ? minInterval : msInterval;
 
     const sendDataFunc = () => {
       const device = new Device(this.state.token);
@@ -70,7 +70,7 @@ class App extends Component {
     this.setState({
       running: true,
       timeInterval: interval / 1000,
-      timer: setInterval(sendDataFunc, msInterval),
+      timer: setInterval(sendDataFunc, interval),
     });
 
     sendDataFunc();
@@ -83,7 +83,7 @@ class App extends Component {
 
   render() {
     if (!this.state.logs.length) {
-      this.addLog('Emulator loaded successfully.');
+      this.addLog('Emulator is ready to start.');
     }
     return (
       <div className="App">
