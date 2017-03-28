@@ -3,7 +3,7 @@ import './App.css';
 import moment from 'moment';
 import ms from 'ms';
 import Device from 'tago/device';
-
+import emulators from './emulators';
 const minInterval = 10000;
 
 class App extends Component {
@@ -55,19 +55,22 @@ class App extends Component {
   }
 
   runEmulator() {
+    if(!emulators[this.state.deviceType]) {
+      return alert("Invalid device type!");
+    }
     const { timeInterval } = this.state;
     const msInterval = ms(`${timeInterval} seconds`);
     const interval = msInterval <= minInterval ? minInterval : msInterval;
 
     const sendDataFunc = () => {
       const device = new Device(this.state.token);
-      device.insert({ variable: 'teste', value: 1 }).then(this.addLog).catch(this.addLog);
+      device.insert(emulators[this.state.deviceType]()).then(this.addLog).catch(this.addLog);
     };
 
     this.setState({
       running: true,
       timeInterval: interval / 1000,
-      timer: setInterval(sendDataFunc, interval),
+      timer: setInterval(sendDataFunc, msInterval),
     });
 
     sendDataFunc();
@@ -97,6 +100,7 @@ class App extends Component {
               <label htmlFor="formGroupExampleInput">Type of Device</label>
               <select className="form-control" value={this.state.deviceType} onChange={this.handleDeviceType}>
                 <option disabled defaultValue value="null">Select a Device Type</option>
+                <option value="car">Car</option>
               </select>
             </div>
             <div className="form-group">
