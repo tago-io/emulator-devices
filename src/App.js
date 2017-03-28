@@ -10,12 +10,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      timeInterval : minInterval / 1000,
-      deviceType   : 'null',
-      token        : null,
-      running      : false,
-      timer        : null,
-      logs         : []
+      timeInterval: minInterval / 1000,
+      deviceType: 'null',
+      token: null,
+      running: false,
+      timer: null,
+      logs: []
     };
 
     this.handleToken = this.handleToken.bind(this);
@@ -55,9 +55,13 @@ class App extends Component {
   }
 
   runEmulator() {
-    if(!emulators[this.state.deviceType]) {
+    if (!this.state.token) {
+      return alert("Invalid device token!");
+    }
+    else if (!emulators[this.state.deviceType]) {
       return alert("Invalid device type!");
     }
+
     const { timeInterval } = this.state;
     const msInterval = ms(`${timeInterval} seconds`);
     const interval = !msInterval || msInterval <= minInterval ? minInterval : msInterval;
@@ -91,7 +95,7 @@ class App extends Component {
           <div className="mt-1">
             <h1>Tago Emulator</h1>
           </div>
-          <form> 
+          <form>
             <div className="form-group">
               <label htmlFor="formGroupExampleInput">Token</label>
               <input type="text" className="form-control" value={this.state.token} onChange={this.handleToken} id="formGroupExampleInput" placeholder="Device Token" />
@@ -101,6 +105,7 @@ class App extends Component {
               <select className="form-control" value={this.state.deviceType} onChange={this.handleDeviceType}>
                 <option disabled defaultValue value="null">Select a Device Type</option>
                 <option value="car">Car</option>
+                <option value="freezer">Freezer</option>
               </select>
             </div>
             <div className="form-group">
