@@ -67,7 +67,7 @@ class App extends Component {
     this.setState({
       running: true,
       timeInterval: interval / 1000,
-      timer: setInterval(sendDataFunc, msInterval),
+      timer: setInterval(sendDataFunc, interval),
     });
 
     sendDataFunc();
