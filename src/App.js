@@ -100,7 +100,7 @@ class App extends Component {
               </select>
             </div>
             <div className="form-group">
-              <label htmlFor="example-number-input">Time Interval</label>
+              <label htmlFor="example-number-input">Time Interval <small>(seconds)</small></label>
               <div>
                 <input className="form-control" type="number" value={this.state.timeInterval} onChange={this.handleTimeInterval} id="example-number-input" />
               </div>
