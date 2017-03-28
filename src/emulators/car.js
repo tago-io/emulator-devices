@@ -1,6 +1,6 @@
 let fuel_level = 100;
 let index = 1;
-
+const time = new Date().getTime();
 function getRandomArbitrary(min, max) {
  return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -16,27 +16,34 @@ function car() {
     const data_to_Tago = [{
         variable: 'speed',
         value: getRandomArbitrary(1, 100),
-        unit: 'mhp'
+        unit: 'mhp',
+        serie: time
     }, {
         variable: 'rpm',
-        value: getRandomArbitrary(1000, 6000)
+        value: getRandomArbitrary(1000, 6000),
+        serie: time
     }, {
         variable: 'fuel',
         value: fuel_level,
-        unit: '%'
+        unit: '%',
+        serie: time
     }, {
         variable: 'lacation_car',
         value: 'car',
-        location: { lat: parseFloat(lat), lng: parseFloat(lng) }
+        location: { lat: parseFloat(lat), lng: parseFloat(lng) },
+        serie: time
     }, {
         variable: 'march',
-        value: getRandomArbitrary(1, 5)
+        value: getRandomArbitrary(1, 5),
+        serie: time
     }, {
         variable: 'brake',
-        value: Math.random() < 0.5 ? false : true
+        value: Math.random() < 0.5 ? false : true,
+        serie: time
     }, {
         variable: 'index',
-        value: index
+        value: index,
+        serie: time
     }];
     index += 1;
 
