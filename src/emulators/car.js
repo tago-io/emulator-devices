@@ -7,8 +7,8 @@ function getRandomArbitrary(min, max) {
 }
 
 function car() {
-    let lat = '-23.550' + getRandomArbitrary(1, 100);
-    let lng = '-46.633' + getRandomArbitrary(1, 100);
+    let lat = '-23.550' + getRandomArbitrary(100, 999);
+    let lng = '-46.633' + getRandomArbitrary(100, 999);
 
     if (fuel_level < 10) fuel_level = 100;
     let lower = getRandomArbitrary(1, 15);
@@ -47,7 +47,7 @@ function car() {
         serie: time
     }];
     index += 1;
-
+    
     return data_to_Tago;
 }
 

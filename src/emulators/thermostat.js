@@ -9,7 +9,7 @@ function thermostat() {
     temperature += lower;
     if (temperature >= 272) temperature = getRandomArbitrary(32, 272);
     const data_to_Tago = {
-        variable: 'thermostat_fahrenheit',
+        variable: 'temperature',
         value: temperature,
         unit: 'F',
         serie: time,
