@@ -1,5 +1,5 @@
 const time = new Date().getTime();
-let index = 1;
+let index  = 1;
 
 function getNormalRandom() {
     return Math.random();
