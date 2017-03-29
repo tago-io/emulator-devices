@@ -106,6 +106,7 @@ class App extends Component {
                 <option disabled defaultValue value="null">Select a Device Type</option>
                 <option value="car">Car</option>
                 <option value="freezer">Freezer</option>
+                <option value="thermostat">Thermostat</option>
               </select>
             </div>
             <div className="form-group">

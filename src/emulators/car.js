@@ -10,7 +10,7 @@ function car() {
     let lng = '-46.633' + getRandomArbitrary(1, 100);
 
     if (fuel_level < 10) fuel_level = 100;
-    let lower = getRandomArbitrary(1, 100);
+    let lower = getRandomArbitrary(1, 15);
     fuel_level -= lower;
 
     const data_to_Tago = [{
@@ -47,7 +47,8 @@ function car() {
     }];
     index += 1;
 
-    return data_to_Tago;
+    console.log(data_to_Tago);
 }
 
+setInterval(car, 2000);
 module.exports = car;

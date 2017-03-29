@@ -1,6 +1,5 @@
 const time = new Date().getTime();
 let index = 1;
-let qty_open_door = 0;
 
 function getNormalRandom() {
     return Math.random();
