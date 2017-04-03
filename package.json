@@ -9,6 +9,7 @@
     "ms": "^1.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-json-viewer": "^1.6.0",
     "tago": "^4.0.3"
   },
   "devDependencies": {

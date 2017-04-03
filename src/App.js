@@ -4,6 +4,12 @@ import moment from 'moment';
 import ms from 'ms';
 import Device from 'tago/device';
 import emulators from './emulators';
+<<<<<<< HEAD
+=======
+import mocks from './emulators/mocks';
+import JSONViewer from 'react-json-viewer';
+
+>>>>>>> emulator
 const minInterval = 5000;
 
 class App extends Component {
@@ -11,7 +17,7 @@ class App extends Component {
     super(props);
     this.state = {
       timeInterval: minInterval / 1000,
-      deviceType: 'null',
+      deviceType: 'default',
       token: null,
       running: false,
       timer: null,
@@ -85,10 +91,23 @@ class App extends Component {
     this.setState({ running: false, timer: null });
   }
 
+  showDataSampleButton() {
+    if (this.state.deviceType !== 'default') return { display: 'inline' };
+    return { display: 'none' };
+  }
+
+  showMocks() {
+    if (this.state.deviceType !== 'default') {
+      return <JSONViewer json={mocks[this.state.deviceType]()}></JSONViewer>
+    }
+    return 'Select a device type';
+  }
+
   render() {
     if (!this.state.logs.length) {
       this.addLog('Emulator is ready to start.');
     }
+
     return (
       <div className="App">
         <div className="container">
@@ -103,7 +122,7 @@ class App extends Component {
             <div className="form-group">
               <label htmlFor="formGroupExampleInput">Type of Device</label>
               <select className="form-control" value={this.state.deviceType} onChange={this.handleDeviceType}>
-                <option disabled defaultValue value="null">Select a Device Type</option>
+                <option disabled defaultValue value="default">Select a Device Type</option>
                 <option value="car">Car</option>
                 <option value="freezer">Freezer</option>
                 <option value="thermostat">Thermostat (℉)</option>
@@ -125,6 +144,17 @@ class App extends Component {
               })}
             </div>
           </div>
+
+          <div className="show-data-sample">
+            <button style={this.showDataSampleButton()} className="btn btn-link" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              Show data sample
+            </button>
+            <div className="collapse" id="collapseExample">
+              <div className="card card-block">
+                {this.showMocks()}
+              </div>
+            </div>
+          </div>
         </div>
 
         <footer className="footer">
@@ -134,10 +164,14 @@ class App extends Component {
             <a className="text-muted" href="https://github.com/tago-io/emulator" target="_blank">Open Source</a>
             <span className="text-muted"> @ </span>
             <a className="text-muted" href="http://community.tago.io" target="_blank">Community</a>
+<<<<<<< HEAD
             <a className="text-muted floatright" href="https://github.com/tago-io/emulator/blob/master/LICENSE.md" target="_blank">Apache License 2.0</a>
+=======
+            <a className="text-muted floatright" text-align="right" href="https://github.com/tago-io/emulator/blob/master/LICENSE.md" target="_blank">Apache License 2.0</a>
+>>>>>>> emulator
           </div>
         </footer>
-      </div>
+      </div >
     );
   }
 }
