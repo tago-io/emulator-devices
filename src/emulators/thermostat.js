@@ -1,9 +1,5 @@
 let temperature = 32;
-<<<<<<< HEAD
 const time      = new Date().getTime();
-=======
-const time = new Date().getTime();
->>>>>>> emulator
 function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }

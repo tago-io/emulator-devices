@@ -47,15 +47,8 @@ function car() {
         serie: time
     }];
     index += 1;
-<<<<<<< HEAD
-    
+
     return data_to_Tago;
 }
 
 module.exports = car;
-=======
-    return data_to_Tago;
-}
-
-module.exports = car;
->>>>>>> emulator
