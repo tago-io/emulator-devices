@@ -2,7 +2,7 @@ let fuel_level = 100;
 let index = 1;
 const time = new Date().getTime();
 function getRandomArbitrary(min, max) {
- return Math.floor(Math.random() * (max - min)) + min;
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function car() {
@@ -46,9 +46,7 @@ function car() {
         serie: time
     }];
     index += 1;
-
-    console.log(data_to_Tago);
+    return data_to_Tago;
 }
 
-setInterval(car, 2000);
 module.exports = car;
